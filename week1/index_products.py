@@ -118,17 +118,19 @@ def index_file(file, index_name):
             doc[key] = child.xpath(xpath_expr)
         if 'productId' not in doc or len(doc['productId']) == 0:
             continue
-        doc_id = doc["sku"]
-        #### Step 2.b: Create a valid OpenSearch Doc and bulk index 2000 docs at a time
-          doc['id'] = key["productId"]
+        doc["id"] = doc["sku"]
+        print(doc)
+        docs.append(doc)
 
-    bulk(client, docs)
-        #   the_doc = doc
-    #     docs.append(the_doc)
+    for doc in docs:
+        docs_indexed += 1
+        if docs_indexed % 2000 = 0: 
+        bulk(client, docs)
+        
+    
 
 
-
-    # return docs_indexed
+# return docs_indexed
 
 @click.command()
 @click.option('--source_dir', '-s', help='XML files source directory')
