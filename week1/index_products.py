@@ -119,13 +119,12 @@ def index_file(file, index_name):
         if 'productId' not in doc or len(doc['productId']) == 0:
             continue
         doc["id"] = doc["sku"]
-        print(doc)
         docs.append(doc)
 
     for doc in docs:
         docs_indexed += 1
-        if docs_indexed % 2000 = 0: 
-        bulk(client, docs)
+        if docs_indexed % 2000 == 0: 
+            bulk(client, doc)
         
     
 
