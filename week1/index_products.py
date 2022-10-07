@@ -118,18 +118,22 @@ def index_file(file, index_name):
             doc[key] = child.xpath(xpath_expr)
         if 'productId' not in doc or len(doc['productId']) == 0:
             continue
-        doc["id"] = doc["sku"]
-        docs.append(doc)
-
-    for doc in docs:
+        the_doc = doc
+        the_doc["_index"] = index_name
+        the_doc["_id"] = doc['sku'][0]
+        docs.append(the_doc)
         docs_indexed += 1
+
         if docs_indexed % 2000 == 0: 
-            bulk(client, doc)
+            bulk(client, docs)
+            docs = []
+            logger.info(f'{docs_indexed} docs indexed')
+
+    if len(docs) > 0:
+        bulk(client, docs)
+        logger.info(f'{docs_indexed} docs indexed')
         
-    
-
-
-# return docs_indexed
+    return docs_indexed
 
 @click.command()
 @click.option('--source_dir', '-s', help='XML files source directory')
