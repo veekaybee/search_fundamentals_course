@@ -131,11 +131,11 @@ def create_query(user_query, filters, sort="_score", sortDir="desc"):
                 "must": [
                     {
                         "query_string": {
-                            "query": '"ipad 2"',
+                            "query": user_query,
                             "fields": [
                                 "name^100",
-                                "shortDescription",
-                                "longDescription",
+                                "shortDescription^50",
+                                "longDescription^10",
                             ],
                             "phrase_slop": 3,
                         }
@@ -144,8 +144,8 @@ def create_query(user_query, filters, sort="_score", sortDir="desc"):
                 "filter": filters,
             }
         },
-        "aggs": {   
-"regularPrice": {
+        "aggs": {
+            "regularPrice": {
                 "range": {
                     "field": "regularPrice",
                     "ranges": [
@@ -159,13 +159,10 @@ def create_query(user_query, filters, sort="_score", sortDir="desc"):
             "department": {"terms": {"field": "department.keyword"}},
             "missing_images": {"missing": {"field": "image.keyword"}},
         },
-         "sort": [
-            {
-                sort: {
-                    "order": sortDir
-                }
-            }
-        ]
+        "sort": [{sort: {"order": sortDir}}],
+        "highlight": {
+            "fields": {"shortDescription": {}, "longDescription": {}}
+        },
     }
 
     return query_obj
