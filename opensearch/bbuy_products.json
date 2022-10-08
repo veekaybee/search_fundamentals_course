@@ -287,119 +287,126 @@
         }
       },
       "regularPrice": {
-        "type": "float"
-      },
-      "relatedProducts": {
-        "type": "text",
+        "type": "float",
         "fields": {
           "keyword": {
             "type": "keyword",
             "ignore_above": 256
           }
         }
-      },
-      "releaseDate": {
-        "type": "date"
-      },
-      "salePrice": {
-        "type": "text",
-        "fields": {
-          "keyword": {
-            "type": "keyword",
-            "ignore_above": 256
-          }
-        }
-      },
-      "salesRankLongTerm": {
-        "type": "long"
-      },
-      "salesRankMediumTerm": {
-        "type": "long"
-      },
-      "salesRankShortTerm": {
-        "type": "text",
-        "fields": {
-          "keyword": {
-            "type": "keyword",
-            "ignore_above": 256
-          }
-        }
-      },
-      "shippingCost": {
-        "type": "text",
-        "fields": {
-          "keyword": {
-            "type": "keyword",
-            "ignore_above": 256
-          }
-        }
-      },
-      "shippingWeight": {
-        "type": "long"
-      },
-      "shortDescription": {
-        "type": "text",
-        "analyzer": "english",
-        "fields": {
-          "keyword": {
-            "type": "keyword",
-            "ignore_above": 256
-          }
-        }
-      },
-      "shortDescriptionHtml": {
-        "type": "text",
-        "fields": {
-          "keyword": {
-            "type": "keyword",
-            "ignore_above": 256
-          }
-        }
-      },
-      "sku": {
-        "type": "text",
-        "fields": {
-          "keyword": {
-            "type": "keyword",
-            "ignore_above": 256
-          }
-        }
-      },
-      "startDate": {
-        "type": "date"
-      },
-      "subclass": {
-        "type": "text"
-      },
-      "subclassId": {
-        "type": "text"
-      },
-      "type": {
-        "type": "text",
-        "fields": {
-          "keyword": {
-            "type": "keyword",
-            "ignore_above": 256
-          }
-        }
-      },
-      "url": {
-        "type": "text",
-        "fields": {
-          "keyword": {
-            "type": "keyword",
-            "ignore_above": 256
-          }
-        }
-      },
-      "weight": {
-        "type": "keyword",
-        "ignore_above": "256"
-      },
-      "width": {
-        "type": "keyword",
-        "ignore_above": "256"
       }
+    },
+    "relatedProducts": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "type": "keyword",
+          "ignore_above": 256
+        }
+      }
+    },
+    "releaseDate": {
+      "type": "date"
+    },
+    "salePrice": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "type": "keyword",
+          "ignore_above": 256
+        }
+      }
+    },
+    "salesRankLongTerm": {
+      "type": "long"
+    },
+    "salesRankMediumTerm": {
+      "type": "long"
+    },
+    "salesRankShortTerm": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "type": "keyword",
+          "ignore_above": 256
+        }
+      }
+    },
+    "shippingCost": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "type": "keyword",
+          "ignore_above": 256
+        }
+      }
+    },
+    "shippingWeight": {
+      "type": "long"
+    },
+    "shortDescription": {
+      "type": "text",
+      "analyzer": "english",
+      "fields": {
+        "keyword": {
+          "type": "keyword",
+          "ignore_above": 256
+        }
+      }
+    },
+    "shortDescriptionHtml": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "type": "keyword",
+          "ignore_above": 256
+        }
+      }
+    },
+    "sku": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "type": "keyword",
+          "ignore_above": 256
+        }
+      }
+    },
+    "startDate": {
+      "type": "date"
+    },
+    "subclass": {
+      "type": "text"
+    },
+    "subclassId": {
+      "type": "text"
+    },
+    "type": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "type": "keyword",
+          "ignore_above": 256
+        }
+      }
+    },
+    "url": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "type": "keyword",
+          "ignore_above": 256
+        }
+      }
+    },
+    "weight": {
+      "type": "keyword",
+      "ignore_above": "256"
+    },
+    "width": {
+      "type": "keyword",
+      "ignore_above": "256"
     }
   }
+}
 }
