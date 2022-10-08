@@ -368,10 +368,10 @@
         "type": "date"
       },
       "subclass": {
-        "type": "long"
+        "type": "text"
       },
       "subclassId": {
-        "type": "long"
+        "type": "text"
       },
       "type": {
         "type": "text",
