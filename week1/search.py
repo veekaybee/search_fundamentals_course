@@ -144,8 +144,8 @@ def create_query(user_query, filters, sort="_score", sortDir="desc"):
                 "filter": filters,
             }
         },
-        "aggs": {
-            "regularPrice": {
+        "aggs": {   
+"regularPrice": {
                 "range": {
                     "field": "regularPrice",
                     "ranges": [
@@ -157,10 +157,15 @@ def create_query(user_query, filters, sort="_score", sortDir="desc"):
                 }
             },
             "department": {"terms": {"field": "department.keyword"}},
-            "missing_images": {"missing": {"field": "image"}},
+            "missing_images": {"missing": {"field": "image.keyword"}},
         },
-        "highlight": {
-            "fields": {"name": {}, "shortDescription": {}, "longDescription": {}}
-        },
+         "sort": [
+            {
+                sort: {
+                    "order": sortDir
+                }
+            }
+        ]
     }
+
     return query_obj
