@@ -125,7 +125,7 @@
         "type": "long"
       },
       "depth": {
-        "type": "long"
+        "type": "text"
       },
       "description": {
         "type": "text",
@@ -164,7 +164,8 @@
         }
       },
       "height": {
-        "type": "long"
+        "type": "keyword",
+        "ignore_above": "256"
       },
       "homeDelivery": {
         "type": "text",
@@ -392,12 +393,13 @@
         }
       },
       "weight": {
-        "type": "long"
+        "type": "keyword",
+        "ignore_above": "256"
       },
       "width": {
-        "type": "long"
+        "type": "keyword",
+        "ignore_above": "256"
       }
     }
   }
-}
 }
