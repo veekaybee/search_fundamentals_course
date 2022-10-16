@@ -5,8 +5,7 @@
         "smarter_hyphens": {
           "tokenizer": "smarter_hyphens_tokenizer",
           "filter": [
-            "smarter_hyphens_filter",
-            "lowercase"
+            "smarter_hyphens_filter"
           ]
         },
         "trigram": {
@@ -29,10 +28,7 @@
       },
       "filter": {
         "smarter_hyphens_filter": {
-          "type": [
-            "lowercase",
-            "shingle"
-          ],
+          "type": "word_delimiter_graph",
           "catenate_words": true,
           "catenate_all": true
         },
