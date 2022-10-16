@@ -188,7 +188,20 @@ def add_click_priors(query_obj, user_query, priors_gb):
         print(f"Can't process user_query: {user_query} for click priors")
         pass
 
-
+def get_autocomplete():
+    return  {
+                "suggest": {
+                    "autocomplete": {
+                        "prefix": prefix,
+                        "completion": {
+                            "field":"suggest",
+                            "skip_duplicates": True
+                        }
+                    }
+                }
+            }
+    
+    
 def add_aggs(query_obj):
     query_obj["aggs"] = {
         "department": {"terms": {"field": "department.keyword", "min_doc_count": 1}},
