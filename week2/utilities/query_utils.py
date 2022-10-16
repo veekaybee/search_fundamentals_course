@@ -148,10 +148,10 @@ def add_spelling_suggestions(query_obj, user_query):
         "text": user_query,
         "phrase_suggest": {
             "phrase": {
-                "field": "title.trigrams",
+                "field": "suggest.trigrams",
                 "direct_generator": [
                     {
-                        "field": "title.trigrams",
+                        "field": "suggest.trigrams",
                         "min_word_length": 2,
                         "suggest_mode": "popular",
                     }
@@ -160,7 +160,7 @@ def add_spelling_suggestions(query_obj, user_query):
             }
         },
         "term_suggest": {
-            "term": {"field": "title", "min_word_length": 2, "suggest_mode": "popular"}
+            "term": {"field": "suggest", "min_word_length": 2, "suggest_mode": "popular"}
         },
     }
 
