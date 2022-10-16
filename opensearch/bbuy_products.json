@@ -323,7 +323,7 @@
         "type": "long"
       },
       "salesRankShortTerm": {
-        "type": "text",
+        "type": "long",
         "fields": {
           "keyword": {
             "type": "keyword",
