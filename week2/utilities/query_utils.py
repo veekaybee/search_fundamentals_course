@@ -188,7 +188,7 @@ def add_click_priors(query_obj, user_query, priors_gb):
         print(f"Can't process user_query: {user_query} for click priors")
         pass
 
-def get_autocomplete():
+def get_autocomplete(prefix):
     return  {
                 "suggest": {
                     "autocomplete": {
